@@ -40,6 +40,79 @@
         &.open {
             transform: rotate(720deg);
             background: transparent;
+
+            &::before {
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+
+            &::after {
+                transform: rotate(-45deg) translate(3px, -7px);
+                width: 28px;
+            }
         }
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: o;
+    opacity: 0.98;
+    width: 100vw;
+    visibility: hidden;
+
+    &.open {
+        visibility: visible;
+    }
+
+    .menu-nav {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        background: $primary-color;
+        height: 100vh;
+        padding-right: 1rem;
+        overflow: hidden;
+        list-style-type: none;
+        transform: translateY(-100%);
+        @include transition-ease;
+
+        &.open {
+            transform: translateY(0);
+        }
+
+        &__item {
+            transform: translateX(100vw);
+            @include transition-ease;
+
+            &.open {
+                transform: translateX(0);
+            }
+
+            &.active  > a {
+                color: $secomdary-color;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 300;
+            padding: 2rem 0;
+            text-transform: uppercase;
+
+            @include transition-ease;
+
+            &:hover {
+                color: $secomdary-color;
+            } 
+        }
+    }
+}
+
+@for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.15s;
     }
 }
