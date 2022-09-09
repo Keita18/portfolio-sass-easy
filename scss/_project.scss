@@ -87,25 +87,6 @@
           }
     }
 
-    // @media (min-width: 900px){
-    //     &__item {
-    //         width: 45%;
-    //         height: 30vh;
-    //     } 
-        
-    //     &__bio-image {
-    //         height: 40vh;
-    //     }
-    // }
-
-    // @media (min-width: 1200px){
-    //     &__item {
-    //         width: 30%;
-    //         height: 25vh;
-    //     } 
-
-    // }
-
     @for $i from 1 through 6 {
         .projects__item:nth-child(#{$i}) {
             background: url('https://raw.githubusercontent.com/codeSTACKr/portfolio-sass/master/dist/img/project-#{$i}.jpg') center top;
