@@ -45,6 +45,7 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
         gap: 2rem;
         width: 60vw;
         align-self: center;
@@ -86,17 +87,24 @@
           }
     }
 
-    @media (min-width: 900px){
-        &__item {
-            width: 45%;
-        } 
-    }
+    // @media (min-width: 900px){
+    //     &__item {
+    //         width: 45%;
+    //         height: 30vh;
+    //     } 
+        
+    //     &__bio-image {
+    //         height: 40vh;
+    //     }
+    // }
 
-    @media (min-width: 1200px){
-        &__item {
-            width: 25%;
-        } 
-    }
+    // @media (min-width: 1200px){
+    //     &__item {
+    //         width: 30%;
+    //         height: 25vh;
+    //     } 
+
+    // }
 
     @for $i from 1 through 6 {
         .projects__item:nth-child(#{$i}) {
